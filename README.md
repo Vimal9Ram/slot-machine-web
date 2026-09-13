@@ -1,6 +1,6 @@
 # 🎰 NEON CASINO: INTERACTIVE WEB SLOT MACHINE
 
-An interactive, browser-based slot machine game engineered with pure HTML5, CSS3, and modern Vanilla JavaScript (ES6+). Features full reel spinning mechanics, randomized payout logic, bankroll tracking, dynamic Web Audio API sound synthesis, state persistence via localStorage, and progressive rank milestones.
+An interactive, browser-based slot machine game engineered with pure HTML5, CSS3, and modern Vanilla JavaScript (ES6+). Features full reel spinning mechanics, randomized payout logic, bankroll tracking, dynamic Web Audio API sound synthesis, state persistence via localStorage, and progressive rank milestones.(More changes might be added soon)
 
 🎮 **[Play Live Demo Here](https://<YOUR-GITHUB-USERNAME>.github.io/slot-machine-web/)**
 
