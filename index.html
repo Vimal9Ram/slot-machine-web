@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Arcade Slots</title>
+  <!-- Google Fonts for Custom Retro Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="arcade-cabinet">
+    
+    <!-- LEFT PANEL: RETRO CRT MONITOR -->
+    <div class="screen-panel">
+      <div class="screen-header">
+        <h1>COSMIC SLOTS</h1>
+      </div>
+
+      <div class="dashboard">
+        <div class="stat-box">
+          <span>CREDITS</span>
+          <div id="balance-display">$100</div>
+        </div>
+        <div class="stat-box">
+          <span>BET AMOUNT</span>
+          <div id="bet-display">$10</div>
+        </div>
+      </div>
+
+      <!-- Vector SVG Reel Symbols -->
+      <div class="reels-container">
+        <div class="reel" id="reel1">
+          <svg class="symbol-icon" viewBox="0 0 24 24"><path fill="#f59e0b" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="reel" id="reel2">
+          <svg class="symbol-icon" viewBox="0 0 24 24"><path fill="#06b6d4" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/></svg>
+        </div>
+        <div class="reel" id="reel3">
+          <svg class="symbol-icon" viewBox="0 0 24 24"><path fill="#ec4899" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+      </div>
+
+      <div id="message">INSERT CREDITS & PULL LEVER</div>
+
+      <button id="reset-btn" class="hidden">REFUEL / RETRY</button>
+    </div>
+
+    <!-- RIGHT PANEL: PHYSICAL ARCADE CONTROLS -->
+    <div class="controls-panel">
+      <div class="bet-controls">
+        <h3>BET CONTROLS</h3>
+        <div class="bet-adjuster">
+          <button id="bet-minus" class="arcade-btn-small">-</button>
+          <input type="number" id="bet-input" value="10" min="1" max="100" readonly>
+          <button id="bet-plus" class="arcade-btn-small">+</button>
+        </div>
+
+        <div class="quick-bets">
+          <button class="chip-btn" data-bet="10">10</button>
+          <button class="chip-btn" data-bet="25">25</button>
+          <button class="chip-btn" data-bet="50">50</button>
+          <button class="chip-btn" data-bet="100">MAX</button>
+        </div>
+      </div>
+
+      <div class="lever-wrapper" id="lever-trigger">
+        <div class="lever-housing">
+          <div class="lever-arm" id="lever-arm">
+            <div class="lever-knob"></div>
+          </div>
+        </div>
+        <span class="lever-label">PULL</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

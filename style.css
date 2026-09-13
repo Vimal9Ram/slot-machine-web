@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #030712;
+  color: #f3f4f6;
+  font-family: 'Rajdhani', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* EXPANDED ARCADE CABINET WRAPPER */
+.arcade-cabinet {
+  background: #0b0f19;
+  border: 5px solid #1f2937;
+  border-radius: 28px;
+  padding: 40px;
+  display: flex;
+  gap: 35px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), inset 0 2px 4px rgba(255, 255, 255, 0.05);
+  max-width: 1050px;
+  width: 95vw;
+}
+
+/* LEFT PANEL: RETRO CRT SCREEN */
+.screen-panel {
+  flex: 1.3;
+  background: #050811;
+  border: 4px solid #1e293b;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95);
+}
+
+/* CRT Scanlines Layer */
+.screen-panel::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%);
+  background-size: 100% 5px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.screen-header h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #38bdf8;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  margin-bottom: 25px;
+}
+
+.dashboard {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.stat-box {
+  background: #090d16;
+  border: 2px solid #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  width: 50%;
+  text-align: center;
+}
+
+.stat-box span {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #64748b;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#balance-display, #bet-display {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+/* LARGER REELS */
+.reels-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #02040a;
+  border: 3px solid #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.reel {
+  width: 110px;
+  height: 110px;
+  background: #090d16;
+  border: 3px solid #334155;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.symbol-icon {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.25));
+}
+
+.spinning {
+  animation: spin 0.08s infinite linear;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-6px); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(-6px); }
+}
+
+#message {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  min-height: 45px;
+  color: #fbbf24;
+  text-align: center;
+  z-index: 2;
+}
+
+#reset-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  margin-top: 15px;
+  width: 100%;
+  padding: 16px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #991b1b;
+  z-index: 2;
+}
+
+#reset-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #991b1b;
+}
+
+#reset-btn.hidden {
+  display: none;
+}
+
+/* RIGHT PANEL: LARGER CONTROLS & LEVER */
+.controls-panel {
+  flex: 0.9;
+  background: #070a12;
+  border: 3px solid #1e293b;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bet-controls {
+  width: 100%;
+  text-align: center;
+}
+
+.bet-controls h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.bet-adjuster {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.arcade-btn-small {
+  width: 48px;
+  height: 48px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #1e40af;
+  transition: all 0.05s ease;
+}
+
+.arcade-btn-small:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #1e40af;
+}
+
+#bet-input {
+  width: 80px;
+  background: #02040a;
+  border: 2px solid #1e293b;
+  color: #fff;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.quick-bets {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.chip-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  background: #1e293b;
+  border: 2px solid #3b82f6;
+  color: #60a5fa;
+  padding: 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #0f172a;
+}
+
+.chip-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #0f172a;
+}
+
+/* LARGER INTERACTIVE LEVER */
+.lever-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.lever-housing {
+  width: 30px;
+  height: 150px;
+  background: #02040a;
+  border: 3px solid #1e293b;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.lever-arm {
+  width: 10px;
+  height: 115px;
+  background: linear-gradient(to right, #64748b, #cbd5e1);
+  position: absolute;
+  top: 12px;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+  border-radius: 6px;
+}
+
+.lever-knob {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 30% 30%, #f87171, #dc2626);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  box-shadow: 0 6px 14px rgba(220, 38, 38, 0.7);
+}
+
+.lever-pulled {
+  transform: rotateX(60deg) scaleY(0.5);
+}
+
+.lever-label {
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 14px;
+  font-size: 0.75rem;
+  color: #ef4444;
+}
